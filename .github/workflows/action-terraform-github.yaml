@@ -1,0 +1,49 @@
+name: Run terraform to initialize GitHub repository with branch protection
+
+on:
+    workflow_dispatch:
+        inputs:
+            init-repo:
+                description: Do you want to create repository (yes/no)?
+                required: true
+                default: 'yes'
+
+env:
+    TF_VAR_gh_token: ${{ secrets.CUSTOM_TOKEN }}
+
+defaults: 
+    run:
+        working_directory: git-init
+        
+jobs:
+    Terraform-Script:
+        runs-on: macos-latest
+        name: Run Terraform Script
+
+        steps:
+            - name: Checkout files
+              uses: actions/checkout@v3
+            
+            - name: Setup Terraform
+              uses: hashicorp/setup-terraform@v1
+
+            - name: Terrafor Init
+              id: init
+              run: terraform init
+
+            - name: Terrafor Validate
+              id: validate
+              run: terraform validate -no-color
+
+            - name: Terrafor Plan
+              id: plan
+              run: terraform plan -no-color
+
+              - name: Terrafor Apply
+              id: apply
+              run: terraform apply -auto-approve
+
+
+
+
+
