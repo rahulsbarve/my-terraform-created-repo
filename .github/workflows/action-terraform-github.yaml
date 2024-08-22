@@ -41,6 +41,7 @@ jobs:
 
             - name: Terrafor Apply
               id: apply
+              uses: hashicorp/terraform-github-actions/apply@v0.4.0
               env:
                 TF_VAR_GH_TOKEN: ${{ secrets.CUSTOM_TOKEN }}
-              run: terraform apply -auto-approve
+              # run: terraform apply -auto-approve
