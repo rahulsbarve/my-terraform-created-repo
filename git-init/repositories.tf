@@ -15,7 +15,7 @@ resource "github_branch" "development" {
 }
 
 resource "github_branch_default" "default" {
-    repository = github_repository.my-terraform-created-repo-actions.name
+    repository = github_repository.my-terraform-created-repo-with-actions.name
     branch = github_branch.development.source_branch
 }
 
