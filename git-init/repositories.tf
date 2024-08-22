@@ -9,7 +9,7 @@ resource "github_repository" "my-terraform-created-repo-with-actions" {
 }
 
 resource "github_branch" "development" {
-    repository = github_repository.my-terraform-created-repo-actions.name
+    repository = github_repository.my-terraform-created-repo-with-actions.name
     branch = "development"
     source_branch = "main"
 }
