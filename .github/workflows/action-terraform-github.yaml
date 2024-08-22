@@ -41,6 +41,6 @@ jobs:
 
             - name: Terrafor Apply
               id: apply
-              with:
+              env:
                 github-token: ${{ secrets.CUSTOM_TOKEN }}
               run: terraform apply -auto-approve
