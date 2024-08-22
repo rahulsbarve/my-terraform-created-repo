@@ -2,5 +2,5 @@
 provider "github" {
   owner = "rahulsbarve"
   token = var.tf_token
-  # token = "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"
+  # token = "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"
 }
