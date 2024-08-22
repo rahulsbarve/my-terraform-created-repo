@@ -42,8 +42,3 @@ jobs:
             - name: Terrafor Apply
               id: apply
               run: terraform apply -auto-approve
-
-
-
-
-
