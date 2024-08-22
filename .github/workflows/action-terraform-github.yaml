@@ -39,7 +39,7 @@ jobs:
               id: plan
               run: terraform plan -no-color
 
-              - name: Terrafor Apply
+            - name: Terrafor Apply
               id: apply
               run: terraform apply -auto-approve
 
