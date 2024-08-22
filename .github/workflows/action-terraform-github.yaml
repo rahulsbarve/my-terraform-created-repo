@@ -9,7 +9,7 @@ on:
                 default: 'yes'
 
 env:
-    TF_VAR_gh_token: ${{ secrets.CUSTOM_TOKEN }}
+    TF_VAR_GH_TOKEN: ${{ secrets.CUSTOM_TOKEN }}
 
 defaults: 
     run:
@@ -42,5 +42,5 @@ jobs:
             - name: Terrafor Apply
               id: apply
               env:
-                github-token: ${{ secrets.CUSTOM_TOKEN }}
+                TF_VAR_GH_TOKEN: ${{ secrets.CUSTOM_TOKEN }}
               run: terraform apply -auto-approve
